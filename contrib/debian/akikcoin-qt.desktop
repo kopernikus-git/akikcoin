@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Akikcoin Core
+Comment=Akikcoin P2P Cryptocurrency
+Comment[fr]=Akikcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Akikcoin, eşten eşe kriptografik sanal para birimi
+Exec=akikcoin-qt %u
+Terminal=false
+Type=Application
+Icon=akikcoin128
+MimeType=x-scheme-handler/akikcoin;
+Categories=Office;Finance;
+StartupWMClass=Akikcoin-qt

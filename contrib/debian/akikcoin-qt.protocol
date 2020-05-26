@@ -1,0 +1,11 @@
+[Protocol]
+exec=akikcoin-qt '%u'
+protocol=akikcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

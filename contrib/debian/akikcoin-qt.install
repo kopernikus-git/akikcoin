@@ -1,0 +1,6 @@
+usr/local/bin/akikcoin-qt usr/bin
+share/pixmaps/akikcoin32.xpm usr/share/pixmaps
+share/pixmaps/akikcoin16.xpm usr/share/pixmaps
+share/pixmaps/akikcoin128.png usr/share/pixmaps
+debian/akikcoin-qt.desktop usr/share/applications
+debian/akikcoin-qt.protocol usr/share/kde4/services/

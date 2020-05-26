@@ -1,0 +1,8 @@
+/usr/bin/akikcoin-cli		--	gen_context(system_u:object_r:akikcoin_exec_t,s0)
+/usr/sbin/akikcoind		--	gen_context(system_u:object_r:akikcoin_exec_t,s0)
+/usr/lib(64)?/akikcoin/akikcoind		--	gen_context(system_u:object_r:akikcoin_exec_t,s0)
+
+/etc/akikcoin(/.*)?		gen_context(system_u:object_r:akikcoin_conf_t,s0)
+/var/lib/akikcoin(/.*)?		gen_context(system_u:object_r:akikcoin_var_lib_t,s0)
+
+(/var)?/run/akikcoind(/.*)?   gen_context(system_u:object_r:akikcoin_var_run_t,s0)

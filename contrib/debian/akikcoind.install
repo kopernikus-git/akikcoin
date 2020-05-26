@@ -1,0 +1,3 @@
+usr/local/bin/akikcoind usr/bin
+usr/local/bin/akikcoin-cli usr/bin
+debian/examples/akikcoin.conf etc/akikcoin
