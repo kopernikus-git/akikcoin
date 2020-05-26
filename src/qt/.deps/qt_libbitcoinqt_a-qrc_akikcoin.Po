@@ -1,0 +1,4 @@
+qt/qt_libbitcoinqt_a-qrc_akikcoin.o: qt/qrc_akikcoin.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
