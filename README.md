@@ -1,5 +1,5 @@
 # Akikcoin Project
-Akikcoin is a self funded project. <b>No Premine, No Presale / ICO</b>. It is an open source cryptocurrency, a fork of PIVX that is meant to be an investment instrument through POS / Masternode capabilities and as the payment currency.
+Akikcoin is a self-funded project, no presale, no ICO and with ultra low 1% premine.. It is an open source cryptocurrency, a fork of PIVX that is meant to be an investment instrument through POS / Masternode capabilities and as the payment currency.
 
 ### Coin Specs
 <table>
@@ -10,7 +10,7 @@ Akikcoin is a self funded project. <b>No Premine, No Presale / ICO</b>. It is an
 <tr><td>Consensus</td><td>PoS / Masternode</td></tr>
 <tr><td>PoS Reward</td><td>10%</td></tr>
 <tr><td>Masternode Reward</td><td>90%</td></tr>
-<tr><td>Premine</td><td><b>ZERO PREMINE / NO PREMINE</b></td></tr>
+<tr><td>Premine</td><td><b>1% / 700 000</b></td></tr>
 </table>
 
 ### Use Case
