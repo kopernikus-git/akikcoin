@@ -1,5 +1,5 @@
 ---
-name: "akikcoin-linux-3.3"
+name: "akikcoin-linux-1.0.1"
 enable_cache: true
 distro: "ubuntu"
 suites:
