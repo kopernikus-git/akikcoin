@@ -87,13 +87,13 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
         columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(tableView, AMOUNT_MINIMUM_COLUMN_WIDTH, DATE_COLUMN_WIDTH);
 
         // Init address field
-        QSettings settings;
-        address = settings.value("current_receive_address").toString();
-        if (address.isEmpty())
-            address = getAddress();
-        ui->reqAddress->setText(address);
+        //QSettings settings;
+        //address = settings.value("current_receive_address").toString();
+        //if (address.isEmpty())
+            //address = getAddress();
+        //ui->reqAddress->setText(address);
 
-        connect(model, SIGNAL(notifyReceiveAddressChanged()), this, SLOT(receiveAddressUsed()));
+        //connect(model, SIGNAL(notifyReceiveAddressChanged()), this, SLOT(receiveAddressUsed()));
     }
 }
 
