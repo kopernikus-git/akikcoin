@@ -1991,10 +1991,13 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
     
     if (nHeight <= Params().LAST_POW_BLOCK()) {
-     nSubsidy = 200 * COIN;
+		nSubsidy = 200 * COIN;
     }
     else {
-     nSubsidy = 20 * COIN;
+		nSubsidy = 20 * COIN;
+		if (nHeight > 56000) {
+			nSubsidy = 10 * COIN;
+		}
     }
 
     return nSubsidy;
