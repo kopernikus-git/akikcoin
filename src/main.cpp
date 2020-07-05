@@ -1992,7 +1992,7 @@ int64_t GetBlockValue(int nHeight)
     nHeight--;
     if (nHeight <= Params().LAST_POW_BLOCK()) {
         nSubsidy = 200 * COIN;
-    } else if (nHeight > Params().LAST_POW_BLOCK() && nHeight <= 56000 && ActiveProtocol() < BLOCK_TIME_INCREASE) {
+    } else if (nHeight > Params().LAST_POW_BLOCK() && nHeight <= 56000) {
         nSubsidy = 20 * COIN;
     } else {
         nSubsidy = 10 * COIN;
