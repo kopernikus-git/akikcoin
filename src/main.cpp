@@ -191,7 +191,7 @@ set<CBlockIndex*> setDirtyBlockIndex;
 
 /** Dirty block file entries. */
 set<int> setDirtyFileInfo;
-} // anon namespace
+} // namespace
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -1989,24 +1989,21 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     int64_t nSubsidy = 0;
-    
+    nHeight--;
     if (nHeight <= Params().LAST_POW_BLOCK()) {
-		nSubsidy = 200 * COIN;
+        nSubsidy = 200 * COIN;
+    } else if (nHeight > Params().LAST_POW_BLOCK() && nHeight <= 56000 && ActiveProtocol() < BLOCK_TIME_INCREASE) {
+        nSubsidy = 20 * COIN;
+    } else {
+        nSubsidy = 10 * COIN;
     }
-    else {
-		nSubsidy = 20 * COIN;
-		if (nHeight > 56000) {
-			nSubsidy = 10 * COIN;
-		}
-    }
-
-    return nSubsidy;
+    return nSubsidy;    
 }
 
 CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
 {
     //if a mn count is inserted into the function we are looking for a specific result for a masternode count
-    if (nMasternodeCount < 1){
+    if (nMasternodeCount < 1) {
         if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
             nMasternodeCount = mnodeman.stable_size();
         else
@@ -3132,7 +3129,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     LogPrint("bench", "      - Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin) [%.2fs]\n", (unsigned)block.vtx.size(), 0.001 * (nTime1 - nTimeStart), 0.001 * (nTime1 - nTimeStart) / block.vtx.size(), nInputs <= 1 ? 0 : 0.001 * (nTime1 - nTimeStart) / (nInputs - 1), nTimeConnect * 0.000001);
 
     //PoW phase redistributed fees to miner. PoS stage destroys fees.
-    CAmount nExpectedMint = GetBlockValue(pindex->pprev->nHeight);
+    CAmount nExpectedMint = GetBlockValue(pindex->nHeight);
     if (block.IsProofOfWork())
         nExpectedMint += nFees;
 

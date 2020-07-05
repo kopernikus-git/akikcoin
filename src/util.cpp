@@ -498,9 +498,35 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     if (!streamConfig.good()) {
         // Create empty akikcoin.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
-        if (configFile != NULL)
+        if (configFile != NULL) 
+		{
+            std::string strHeader =
+                "# Akikcoin Configuration File!\n"
+                "# If you need aditional addnodes vist site below.\n"
+                "# https://openchains.info/coin/akikcoin/peers \n"
+				"addnode=95.216.32.169:19532 \n"
+				"addnode=95.217.140.129:19532 \n"
+				"addnode=95.217.140.130:19532 \n"
+				"addnode=95.217.140.131:19532 \n"
+				"addnode=95.217.140.132:19532 \n"
+				"addnode=95.217.140.133:19532 \n"
+				"addnode=95.217.140.134:19532 \n"
+				"addnode=136.144.171.201:19532 \n"
+				"addnode=94.237.3.163:19532 \n"
+				"addnode=149.28.141.28:19532 \n"
+				"addnode=95.217.140.128:19532 \n"
+				"addnode=45.77.41.234:19532 \n"
+				"addnode=49.12.124.118:19532 \n"
+				"addnode=136.144.171.201:19532 \n"
+				"addnode=94.237.3.163:19532 \n"
+				"addnode=149.28.141.28:19532 \n"
+				"addnode=95.217.140.128:19532 \n"
+				"addnode=45.77.41.234:19532 \n";
+            fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
-        return; // Nothing to read, so just return
+            streamConfig.open(GetConfigFile());
+        }
+        //return; // Nothing to read, so just return
     }
 
     set<string> setOptions;
